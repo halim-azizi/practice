@@ -17,10 +17,6 @@ function FetchAPI() {
 
     return(
         <div className="container">
-            {
-                Object?.keys(data[0] ? data[0] : [])?.forEach((key,index) => {
-                })
-            }
             <table className="user-table">
                 <thead>
                 <tr>

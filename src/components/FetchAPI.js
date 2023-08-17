@@ -1,65 +1,55 @@
 import axios from 'axios';
 import {useEffect, useState} from "react";
+import './style.css'
 function FetchAPI() {
     const url = 'https://thronesapi.com/api/v2/Characters';
     const [data, setData] = useState([]);
-    const [keys, setKeys] = useState([]);
 
     const fetchInfo = () => {
-        return axios.get(url).then((res) => {
+        return axios.get(url).then((res) =>
                 setData(res.data)
-                setKeys(Object.keys(res.data[0]))
-            }
         );
     };
 
     useEffect(() => {
         fetchInfo();
-        console.log(keys)
-        keys.forEach((key) => {
-        console.log(key)
-        })
-
+        // console.log(data)
+        // console.log(data)
+        // console.log("o",Object.keys(data[0] ? data[0] : []));
     }, []);
 
     return(
         <div className="container">
-            <table>
+            {
+                Object?.keys(data[0] ? data[0] : [])?.forEach((key,index) => {
+                })
+            }
+            <table className="user-table">
                 <thead>
-                {
-                    keys.forEach((key) => {
-                       return (<tr>
-                        <th>{key}</th>
-                        <th>{key}</th>
-                        <th>{key}</th>
-                        <th>{key}</th>
-                        <th>{key}</th>
-                        <th>{key}</th>
-                        <th>{key}</th>
-                    </tr>
-                       )})
-                }
+                <tr>
+                    {Object.keys(data[0] ? data[0] : []).map((key, index) => (
+                        <th key={index}>{key}</th>
+                    ))}
+                </tr>
                 </thead>
                 <tbody>
-                {
-                    data.map((user, index) => {
-                        return <tr key={index}>
+                    {data.map((user, index) => (
+                        <tr key={index}>
                             <td>{user.id}</td>
                             <td>{user.firstName}</td>
                             <td>{user.lastName}</td>
                             <td>{user.title}</td>
                             <td>{user.family}</td>
-                            <td>{user.image}</td>
+                            <td>
+                                <img src={user.imageUrl} alt={user.image} />
+                            </td>
                             <td>{user.imageUrl}</td>
                         </tr>
-                    })
-                }
+                    ))}
                 </tbody>
             </table>
         </div>
     );
-
-
 }
 
 export default FetchAPI

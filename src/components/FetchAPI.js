@@ -13,9 +13,6 @@ function FetchAPI() {
 
     useEffect(() => {
         fetchInfo();
-        // console.log(data)
-        // console.log(data)
-        // console.log("o",Object.keys(data[0] ? data[0] : []));
     }, []);
 
     return(

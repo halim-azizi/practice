@@ -1,0 +1,62 @@
+body {
+    background-color: #ffcc00;
+}
+
+.spf {
+    margin: 30px;
+    font-size: 90px;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    background-color: black;
+    height: 20px;
+    color: white;
+    /*column-gap: 30px;*/
+    align-items: center;
+    margin: 30px;
+    padding: 20px;
+}
+
+.items {
+    height: 60px;
+    width: 60px;
+    padding-right: 10px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.link1 {
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    background-color: #61dafb;
+    text-decoration: none;
+}
+
+.inactive {
+    color: white;
+    text-decoration: none;
+}
+
+.paragraf {
+    color: black;
+    height: 20vh;
+    background-color: white;
+    margin: 30px;
+}
+
+.content-title {
+    text-transform: uppercase;
+    margin-left: 25px;
+    padding-top: 15px;
+}
+
+.content-paragraph {
+    margin-left: 25px;
+}
